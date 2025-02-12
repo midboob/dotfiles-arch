@@ -1,9 +1,0 @@
-2025/02/06-15:44:34.956 100d6 Reusing MANIFEST /home/edward/.config/vesktop/sessionData/Local Storage/leveldb/MANIFEST-000001
-2025/02/06-15:44:34.959 100d6 Recovering log #36
-2025/02/06-15:44:34.959 100d6 Level-0 table #40: started
-2025/02/06-15:44:34.968 100d6 Level-0 table #40: 84953 bytes OK
-2025/02/06-15:44:34.968 100d6 Recovering log #40
-2025/02/06-15:44:34.969 100d6 Level-0 table #41: started
-2025/02/06-15:44:34.970 100d6 Level-0 table #41: 50849 bytes OK
-2025/02/06-15:44:34.974 100d6 Delete type=0 #40
-2025/02/06-15:44:34.974 100d6 Delete type=0 #36
