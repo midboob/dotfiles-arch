@@ -67,22 +67,8 @@
         "volume",
         "network",
         "bluetooth",
+        "battery",
         "systray",
-        "clock",
-        "notifications"
-      ]
-    },
-    "1": {
-      "left": [
-        "dashboard",
-        "workspaces",
-        "windowtitle"
-      ],
-      "middle": [
-        "media"
-      ],
-      "right": [
-        "volume",
         "clock",
         "notifications"
       ]
@@ -114,11 +100,11 @@
   "bar.workspaces.workspaces": 2,
   "bar.scrollSpeed": 12,
   "theme.bar.layer": "top",
-  "menus.dashboard.stats.enable_gpu": true,
+  "menus.dashboard.stats.enable_gpu": false,
   "notifications.ignore": [
     "Spotify"
   ],
-  "menus.dashboard.powermenu.avatar.image": "/mnt/Storage/Pictures/pfp/  (1180).jpg",
+  "menus.dashboard.powermenu.avatar.image": "",
   "notifications.timeout": 6998,
   "theme.font.weight": 700,
   "bar.notifications.show_total": false,
@@ -132,5 +118,13 @@
   "theme.bar.buttons.background_opacity": 100,
   "theme.bar.buttons.y_margins": "0.1em",
   "theme.bar.border_radius": "0.1em",
-  "theme.bar.buttons.padding_y": "0.2rem"
+  "theme.bar.buttons.padding_y": "0.2rem",
+  "bar.windowtitle.label": true,
+  "bar.windowtitle.title_map": [
+    [
+      "org.pwmt.zathura",
+      "",
+      "Zathura"
+    ]
+  ]
 }
