@@ -58,13 +58,13 @@ This configuration includes:
 1. **Clone the repository**:
 
    ```bash
-   git clone https://github.com/yourusername/arch-hyprland-dotfiles.git
+   git clone https://github.com/midboob/dotfiles.git
    ```
 
 2. **Navigate to the directory**:
 
    ```bash
-   cd arch-hyprland-dotfiles
+   cd dotfiles
    ```
 
 3. **Run the installation script**:
