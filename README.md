@@ -41,17 +41,17 @@ These are my personal configuration files for my Arch Linux system running the H
 This configuration includes:
 
 - **Window Manager**: Hyprland
-- **Terminal Emulator**: Alacritty
-- **Shell**: Zsh with Oh My Zsh
+- **Terminal Emulator**: Kitty
+- **Shell**: Zsh
 - **Editor**: Neovim
 - **Compositor**: Integrated with Hyprland
 - **Launcher**: Rofi
 - **Status Bar**: Waybar
-- **Notification Daemon**: Dunst
-- **File Manager**: Thunar
-- **Browser**: Firefox
-- **Wallpaper Manager**: Swaybg
-- **Lock Screen**: Swaylock
+- **Notification Daemon**: SwayNC
+- **File Manager**: Nautilus
+- **Browser**: Google Chrome / Zen Browser
+- **Wallpaper Manager**: Swww / Waypaper
+- **Lock Screen**: Wlogout
 
 ## Installation
 
@@ -77,32 +77,119 @@ This configuration includes:
 
 ## Installed Packages
 
-To replicate this setup, you'll need to install the following packages:
+To replicate this setup, install the following packages:
 
 ```bash
-# List of explicitly installed packages
-# Generated using: pacman -Qqe
-alacritty
-dunst
-firefox
-hyprland
+amd-ucode
+ani-cli-git
+anki
+aylurs-gtk-shell-git
+base
+base-devel
+bleachbit
+bluetui
+bluez
+bluez-deprecated-tools
+bluez-utils
+brightnessctl
+btop
+cmake
+code
+dart-sass
+dosfstools
+efibootmgr
+egl-wayland
+fastfetch
+gimp
+git
+gnome-calculator
+gnome-keyring
+google-chrome
+grimblast-git
+grub
+gst-plugin-pipewire
+gvfs
+hyprshot
+i2c-tools
+jre-openjdk
+kdeconnect
+kitty
+lazygit
+libgtop
+libpulse
+libtree
+linux
+linux-firmware
+linux-headers
+localsend-bin
+matugen-bin
+minecraft-launcher
+mtools
+nautilus
 neovim
+networkmanager
+noto-fonts
+noto-fonts-cjk
+noto-fonts-emoji
+noto-fonts-extra
+ntfs-3g
+nvidia-dkms
+nvidia-utils
+obsidian
+okular
+openrgb
+os-prober
+outlook-for-linux-bin
+pacman-contrib
+pipewire
+pipewire-alsa
+pipewire-jack
+pipewire-pulse
+power-profiles-daemon
+python-pywal
+python-pywalfox
+python-watchdog
+qimgv
+qt5-wayland
 rofi
-swaybg
-swaylock
-thunar
+sddm
+spicetify-cli
+spotify
+steam
+stow
+swaync
+switcheroo
+swww
+texlive-installer
+ttf-segoe-ui-variable
+upower
+upscayl-bin
+vesktop
 waybar
+waypaper
+wf-recorder
+wget
+wireplumber
+wl-clipboard
+wlogout
+yay
+yazi
+zathura
+zathura-pdf-poppler
+zen-browser-bin
+zenity
+zoom
+zram-generator
 zsh
-# ... add other packages as needed
 ```
 
-To generate this list on your system, run:
+To regenerate this list on your system:
 
 ```bash
 pacman -Qqe > pkglist.txt
 ```
 
-If you use an AUR helper like `yay` or `paru`, you can include AUR packages too:
+To include AUR packages (requires `yay`):
 
 ```bash
 yay -Qqe > pkglist.txt
