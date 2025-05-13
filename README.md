@@ -1,10 +1,3 @@
-# dotfiles
-my linux dotfiles and maybe some more
-
-more more
-
-more comits
-
 packages (yay):
 vesktop
 rofi
@@ -14,9 +7,6 @@ zsh
 fastfetch
 waypaper
 
-
-
-
 github download
 powerlevel10k
 
@@ -24,9 +14,9 @@ google the website
 oh-my-zsh
 
 
-# Arch Linux Hyprland Dotfiles
+# Arch Linux Hyprland Dots
 
-These are my personal configuration files for my Arch Linux system running the Hyprland window manager. This setup is tailored to my preferences and workflow.
+My personal config files for my Arch system running Hyprland.
 
 ## Table of Contents
 
@@ -44,12 +34,11 @@ This configuration includes:
 - **Terminal Emulator**: Kitty
 - **Shell**: Zsh
 - **Editor**: Neovim
-- **Compositor**: Integrated with Hyprland
 - **Launcher**: Rofi
 - **Status Bar**: Waybar
 - **Notification Daemon**: SwayNC
 - **File Manager**: Nautilus
-- **Browser**: Google Chrome / Zen Browser
+- **Browser**: Zen Browser
 - **Wallpaper Manager**: Swww / Waypaper
 - **Lock Screen**: Wlogout
 
@@ -70,10 +59,8 @@ This configuration includes:
 3. **Run the installation script**:
 
    ```bash
-   ./install.sh
+   ./seup.sh
    ```
-
-   *Note: Ensure you review the `install.sh` script before executing it.*
 
 ## Installed Packages
 
