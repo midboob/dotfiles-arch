@@ -182,23 +182,3 @@ zoom
 zram-generator
 zsh
 ```
-
-To regenerate this list on your system:
-
-```bash
-pacman -Qqe > pkglist.txt
-```
-
-To include AUR packages (requires `yay`):
-
-```bash
-yay -Qqe > pkglist.txt
-```
-
-## Screenshots
-
-*Include screenshots of your desktop setup here.*
-
-## License
-
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
