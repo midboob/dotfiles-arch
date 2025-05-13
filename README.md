@@ -181,12 +181,8 @@ zenity
 zoom
 zram-generator
 zsh
-hypridle-git
 hyprland-git
-hyprlock-git
 hyprpicker-git
-hyprpolkitagent-git
-hyprsunset-git
 hyprsysteminfo-git
 xdg-desktop-portal-hyprland-git
 ```
