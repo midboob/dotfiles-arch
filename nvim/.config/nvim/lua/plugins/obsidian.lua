@@ -24,6 +24,13 @@ return {
       },
     },
 
-    -- see below for full list of options 👇
+    mappings = {
+      ["<leader>ch"] = {
+        action = function()
+          return require("obsidian").util.toggle_checkbox()
+        end,
+        opts = { buffer = true },
+      },
+    },
   },
 }
