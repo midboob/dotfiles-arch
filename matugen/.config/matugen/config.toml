@@ -55,3 +55,7 @@ output_path = '~/.config/rofi/colors.rasi'
 [templates.spicetify]
 input_path = '~/.config/matugen/templates/spotify-colors.ini'
 output_path = '~/.config/spicetify/Themes/Comfy/color.ini'
+
+[templates.nvim]
+input_path = '~/.config/nvim/pywal/matugen.lua'
+output_path = '~/.cache/wal/base46-dark.lua'
