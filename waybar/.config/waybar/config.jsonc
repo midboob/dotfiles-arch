@@ -7,7 +7,7 @@
     "margin-left": 4,
     "margin-right": 4,
     "modules-left": [
-      "custom/rofi",
+      "custom/power",
       "hyprland/workspaces",
       "mpris",
       "hyprland/window"
@@ -24,7 +24,7 @@
       // "custom/color-picker",
       // "custom/screenshot",
       // "custom/wallpaper",
-      "custom/power"
+      "custom/rofi"
     ],
     "custom/rofi": {
       "format": "\udb82\udcc7",
