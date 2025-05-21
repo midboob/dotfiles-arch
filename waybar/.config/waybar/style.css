@@ -14,8 +14,7 @@
 }
 
 #custom-rofi {
-  margin-left: 7pt;
-  padding-right: 3pt;
+  margin-right: 11pt;
   font-size: 12pt;
   color: @primary;
 }
@@ -134,7 +133,8 @@
 }
 
 #custom-power {
-  margin-right: 11pt;
+  margin-left: 11pt;
+  padding-right: 3pt;
   font-size: 10pt;
   color: @primary;
 }
