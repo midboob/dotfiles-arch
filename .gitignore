@@ -1,6 +1,8 @@
+# Hyprland config files
 hypr/.config/hypr/conf/monitor.conf
 hypr/.config/hypr/conf/environment.conf
 
+# Matugen generated color files
 gtk/.config/gtk-3.0/gtk.css
 gtk/.config/gtk-4.0/gtk.css
 kitty/.config/kitty/colors.conf
