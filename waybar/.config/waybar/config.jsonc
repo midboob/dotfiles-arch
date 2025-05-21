@@ -24,15 +24,11 @@
       // "custom/color-picker",
       // "custom/screenshot",
       // "custom/wallpaper",
-      "custom/rofi"
+      "custom/swaync"
     ],
-    "custom/rofi": {
+    "custom/swaync": {
       "format": "\udb82\udcc7",
-      "on-click": "rofi -show drun",
-      "on-click-middle": "pkill -9 rofi",
-      "tooltip-format": "{}",
-      "exec": "~/.config/waybar/scripts/cheatsheet.py",
-      "interval": "once"
+      "on-click": "swaync-client -t"
     },
     "hyprland/workspaces": {
       "all-outputs": true,
