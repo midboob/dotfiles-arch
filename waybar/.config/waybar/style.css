@@ -1,12 +1,14 @@
-/* @import "colors.css"; */
+@import "colors.css";
 
 #waybar.top {
   background: none;
 }
+
 #waybar.top > box.horizontal {
-  background: #11111b;
-  box-shadow: 0 0 4pt #11111b;
+  background: @surface_dim;
+  box-shadow: 0 0 4pt @surface_dim;
   border-radius: 12pt;
+  background-clip: padding-box;
   margin: 6pt;
   padding: 2pt;
 }
@@ -15,22 +17,27 @@
   margin-left: 7pt;
   padding-right: 3pt;
   font-size: 12pt;
+  color: @primary;
+}
+
+#clock {
+  color: @on_surface;
 }
 
 #workspaces {
   margin-left: 12pt;
 }
 #workspaces button {
-  color: #585b70;
+  color: @outline_variant;
 }
 #workspaces button:not(:first-child) {
   margin-left: 2pt;
 }
 #workspaces button.visible {
-  color: #89b4fa;
+  color: @tertiary;
 }
 #workspaces button.active {
-  color: #f38ba8;
+ color: @secondary;
 }
 #workspaces button:hover, #workspaces button:focus {
   background: none;
@@ -38,12 +45,12 @@
   box-shadow: none;
 }
 #workspaces button:hover:not(.active):not(.visible), #workspaces button:focus:not(.active):not(.visible) {
-  color: #9399b2;
+  color: @on_surface_variant;
 }
 
 #mpris {
-  background: #1e1e2e;
-  color: #a6e3a1;
+  background: @surface_container_high;
+  color: @on_secondary_container;
   border-radius: 12pt;
   margin-left: 15pt;
   padding: 0 8pt;
@@ -52,10 +59,11 @@
 #window {
   margin-left: 15pt;
   margin-right: 20pt;
+  color: @on_surface_variant;
 }
 
 #memory {
-  color: #fab387;
+  color: @on_error_container;
   margin-right: 12pt;
 }
 
@@ -63,7 +71,7 @@
   margin-right: 10pt;
 }
 #tray menu {
-  background: #1e1e2e;
+  background: @surface_container_high;
   padding: 2pt;
 }
 #tray menu * {
@@ -76,21 +84,21 @@
 @keyframes blink {
   to {
     background-color: rgba(30, 34, 42, 0.5);
-    color: #cdd6f4;
+    color: @on_surface;
   }
 }
 #backlight {
-  color: #cba6f7;
+  color: @on_tertiary_container;
   margin-right: 10pt;
 }
 
 #pulseaudio {
-  color: #74c7ec;
+  color: @on_surface;
   margin-right: 10pt;
 }
 
 #battery {
-  color: #f9e2af;
+  color: @secondary_fixed_dim;
   margin-right: 15pt;
 }
 
@@ -98,11 +106,11 @@
 #battery.good,
 #battery.charging,
 #battery.plugged {
-  color: #a6e3a1;
+  color: @on_secondary_container;
 }
 
 #battery.critical:not(.charging) {
-  color: #f38ba8;
+  color: @error;
   animation-name: blink;
   animation-duration: 0.5s;
   animation-timing-function: linear;
@@ -128,19 +136,8 @@
 #custom-power {
   margin-right: 11pt;
   font-size: 10pt;
+  color: @primary;
 }
-
-/* #waybar.bottom {
-  background: none;
-}
-#waybar.bottom box.modules-center {
-  background: #181825;
-  margin-top: 5pt;
-  padding: 0 4pt;
-  border-top-left-radius: 10pt;
-  border-top-right-radius: 10pt;
-  box-shadow: 0 0 3pt #181825;
-} */
 
 #custom-file-manager {
   background: transparent;
@@ -505,8 +502,8 @@
 }
 
 tooltip {
-  background: #11111b;
-  color: #cdd6f4;
+  background: @surface_dim;
+  color: @on_surface;
   border-radius: 5pt;
 }
 
