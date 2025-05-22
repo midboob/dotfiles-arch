@@ -142,7 +142,7 @@
         "warning": 30,
         "critical": 15
       },
-      "on-click": "rog-control-center"
+      "on-click": "~/.config/waybar/scripts/powerprofile.sh"
     },
     "custom/color-picker": {
       "format": "",

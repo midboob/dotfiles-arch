@@ -67,17 +67,31 @@
 }
 
 #tray {
+  background: @surface_dim;
+  box-shadow: 0 0 4pt @surface_dim;
+  border-radius: 12pt;
   margin-right: 10pt;
-}
-#tray menu {
-  background: @surface_container_high;
   padding: 2pt;
 }
+
+#tray menu {
+  background: @surface_container_high;
+  color: @on_surface;
+  border-radius: 8pt;
+  padding: 4pt;
+}
+
 #tray menu * {
   margin: 2pt;
 }
+
 #tray menu check {
   margin-right: 4pt;
+}
+
+#tray menu item:hover {
+  background: @surface_bright;
+  color: @on_primary;
 }
 
 @keyframes blink {
