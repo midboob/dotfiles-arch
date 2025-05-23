@@ -49,7 +49,7 @@ output_path = '~/.config/hypr/colors.conf'
 post_hook = 'hyprctl reload'
 
 [templates.rofi]
-input_path = '~/.config/matugen/templates/rofi.rasi'
+input_path = '~/.config/matugen/templates/rofi-colors.rasi'
 output_path = '~/.config/rofi/colors.rasi'
 
 [templates.spicetify]

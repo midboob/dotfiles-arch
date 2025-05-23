@@ -121,3 +121,20 @@ source ~/powerlevel10k/powerlevel10k.zsh-theme
 
 # Adding texlv to PATH
 export PATH="$PATH:/usr/local/texlive/2025/bin/x86_64-linux"
+
+# git aliases
+alias gs="git status --short"
+alias gd="git diff --output-indicator-new=' ' --output-indicator-old=' '"
+
+alias ga="git add"
+alias gc="git commit"
+
+alias gp="git push"
+alias gu="git pull"
+
+alias gl='git log --graph --all --pretty=format:"%C(magenta)%h %C(white) %an  %ar%C(blue)  %D%n%s%n"'
+alias gb="git branch"
+
+alias gi="git init"
+alias gcl="git clone"
+
