@@ -1,14 +1,4 @@
-/***
- *    ┓ ┏┓ ┏┓┏┓┏┓┳┳┏┳┓
- *    ┃┃┃┃ ┃┃┃┓┃┃┃┃ ┃ 
- *    ┗┻┛┗┛┗┛┗┛┗┛┗┛ ┻ 
- *                    
- */
-
-
-/* wallust-wlogout */
-
-/* Importing wllust colors */
+/* Importing matugen colors */
 @import '../../.config/waybar/colors.css';
 
 
