@@ -2,7 +2,7 @@
 style_dir="$HOME/.config/rofi/styles"
 
 # Style-theme
-style_theme='1'
+style_theme='2'
 
 
 # Run
