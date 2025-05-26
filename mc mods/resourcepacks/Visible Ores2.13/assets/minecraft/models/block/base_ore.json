@@ -1,0 +1,11 @@
+{
+    "parent": "minecraft:block/cube_all_emissive",
+    "textures": {
+        "all": "#all",
+        "all1": "#bright",
+        "all2": "minecraft:block/empty",
+        "all3": "minecraft:block/empty",
+        "all4": "minecraft:block/empty",
+        "all5": "#dark"
+    }
+}
