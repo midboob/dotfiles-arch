@@ -137,4 +137,7 @@ alias gb="git branch"
 
 alias gi="git init"
 alias gcl="git clone"
-
+ 
+# vim aliases
+alias vim="nvim"
+alias vi="nvim"
