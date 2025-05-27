@@ -1,0 +1,8 @@
+# List of files for STOW to ignore
+\.git
+\.gitignore
+\.gitmodules
+^/README.*
+^/LICENSE.*
+^/COPYING
+startpage
