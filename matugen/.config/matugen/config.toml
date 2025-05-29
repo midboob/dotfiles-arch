@@ -1,9 +1,9 @@
 [config]
 
-[config.wallpaper]
-command = "swww"
-arguments = ["img", "--transition-type", "center"]
-set = true
+# [config.wallpaper]
+# command = "swww"
+# arguments = ["img", "--transition-type", "center"]
+# set = true
 
 [templates.zathura]
 input_path = '~/.config/matugen/templates/zathura-colors'
