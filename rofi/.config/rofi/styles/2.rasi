@@ -8,7 +8,7 @@
  **/
 
 /*****----- Global Properties -----*****/
-@import "~/.config/rofi/catppuccin.rasi"
+@import "~/.cache/wal/colors-rofi.rasi"
 
 /*****----- Configuration -----*****/
 configuration {

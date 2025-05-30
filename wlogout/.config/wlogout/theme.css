@@ -1,5 +1,5 @@
-/* Importing matugen colors */
-@import '../../.config/waybar/colors.css';
+/* Importing pywal colors */
+@import '../../.cache/wal/colors-waybar.css';
 
 
 window {

@@ -1,8 +1,8 @@
-@define-color text            @on_surface;
-@define-color background-alt  @surface_bright;
-@define-color selected        @primary;
-@define-color hover           alpha(@selected, .4);
-@define-color urgent          @error;
+@define-color text            @foreground;
+@define-color background-alt  @color1;
+@define-color selected        @color3;
+@define-color hover           @color5;
+@define-color urgent          @color2;
 
 * {
 

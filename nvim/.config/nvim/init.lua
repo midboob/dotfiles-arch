@@ -3,3 +3,8 @@ require("config.lazy")
 
 -- clipboard
 vim.opt.clipboard = "unnamedplus"
+
+-- neopywal
+local neopywal = require("neopywal")
+neopywal.setup()
+vim.cmd.colorscheme("neopywal")

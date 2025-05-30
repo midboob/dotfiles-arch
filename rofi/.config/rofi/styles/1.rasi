@@ -16,7 +16,7 @@ configuration {
 }
 
 /*****----- Global Properties -----*****/
-@import                          "~/.config/rofi/colors.rasi"
+@import "~/.cache/wal/colors-rofi.rasi"
 
 * {
     font: "Iosevka Nerd Font 10";
