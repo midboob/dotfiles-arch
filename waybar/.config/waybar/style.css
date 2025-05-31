@@ -9,8 +9,8 @@
   box-shadow: 0 0 4pt @color0;
   border-radius: 12pt;
   background-clip: padding-box;
-  margin: 6pt;
-  padding: 2pt;
+  margin: 5pt;
+  padding: 1pt;
 }
 
 #custom-swaync {
@@ -27,7 +27,7 @@
   margin-left: 12pt;
 }
 #workspaces button {
-  color: @color7;
+  color: @color8;
 }
 #workspaces button:not(:first-child) {
   margin-left: 2pt;
@@ -36,7 +36,7 @@
   color: @color11;
 }
 #workspaces button.active {
- color: @color2;
+ color: @color11;
 }
 #workspaces button:hover, #workspaces button:focus {
   background: none;

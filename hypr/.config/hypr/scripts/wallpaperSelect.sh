@@ -1,0 +1,87 @@
+#!/usr/bin/env bash
+## /* ---- 🌛 https://github.com/JaKooLit 🌛 ---- */  ##
+# Wallpaper changer using swww and rofi (SUPER + W)
+
+# Config
+wallpaperDir="$HOME/Pictures/wallpapers"
+themesDir="$HOME/.config/rofi/themes"
+reload="$HOME/.config/hypr/scripts/reload.sh" # Reload swaync, waybar, and rofi
+
+# Transition settings
+FPS=60
+TYPE="any"
+DURATION=3
+BEZIER="0.4,0.2,0.4,1.0"
+SWWW_PARAMS="--transition-fps ${FPS} --transition-type ${TYPE} --transition-duration ${DURATION} --transition-bezier ${BEZIER}"
+
+# Ensure swww is running
+if command -v swww &>/dev/null; then
+  swww query || swww init
+else
+  echo "swww is not installed."
+  exit 1
+fi
+
+# Get wallpaper list
+PICS=($(find -L "${wallpaperDir}" -type f \( -iname \*.jpg -o -iname \*.jpeg -o -iname \*.png -o -iname \*.gif \) | sort))
+randomNumber=$((($(date +%s) + RANDOM) + $$))
+randomPicture="${PICS[$((randomNumber % ${#PICS[@]}))]}"
+randomChoice="[${#PICS[@]}] Random"
+
+# Rofi menu
+menu() {
+  printf "$randomChoice\n"
+  for pic in "${PICS[@]}"; do
+    if [[ ! "$pic" =~ \.gif$ ]]; then
+      printf "$(basename \"${pic}\" | cut -d. -f1)\x00icon\x1f${pic}\n"
+    else
+      printf "$(basename \"${pic}\")\n"
+    fi
+  done
+}
+
+# Set wallpaper and optionally run a post-script
+set_wallpaper() {
+  swww img "$1" ${SWWW_PARAMS}
+  ln -sf "$1" "$HOME/.current_wallpaper"
+
+  # Generate pywal colors from wallpaper
+  wal -i "$1" -n
+
+  # Execute reload script
+  if [[ -x "$reload" ]]; then
+    "$reload"
+  fi
+}
+
+# Main logic
+main() {
+  # Kill existing rofi to avoid UI issues
+  pidof rofi >/dev/null && pkill rofi
+
+  choice=$(menu | rofi -show -dmenu \
+    -theme "${themesDir}/wallpaper-select.rasi" \
+    -kb-row-down j \
+    -kb-row-up k \
+    -kb-row-right l \
+    -kb-row-left h)
+
+  [[ -z "$choice" ]] && exit 0
+
+  if [[ "$choice" == "$randomChoice" ]]; then
+    set_wallpaper "${randomPicture}"
+    exit 0
+  fi
+
+  for file in "${PICS[@]}"; do
+    if [[ "$(basename "$file" | cut -d. -f1)" == "$choice" ]]; then
+      set_wallpaper "$file"
+      exit 0
+    fi
+  done
+
+  echo "Image not found."
+  exit 1
+}
+
+main
