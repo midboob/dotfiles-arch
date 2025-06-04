@@ -1,0 +1,33 @@
+/**
+* ____        __ _ 
+*|  _ \ ___  / _(_)
+*| |_) / _ \| |_| |
+*|  _ < (_) |  _| |
+*|_| \_\___/|_| |_|
+*
+*by Frogprog (2025)
+**/
+
+configuration {
+  display-drun: "";
+  drun-display-format: "{icon}{name}";
+  font: "JetBrainsMono Nerd Font Medium 12";
+  modi: "drun";
+  show-icons: false;
+} 
+
+@theme "~/.cache/wal/colors-rofi-dark.rasi"
+
+* {
+  border: 0;
+  border-radius: 8;
+  margin: 0;
+  padding: 2;
+}
+
+window {
+  width: 350px;
+}
+listview {
+  lines: 8;
+}
