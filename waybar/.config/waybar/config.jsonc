@@ -1,4 +1,3 @@
-[
   {
     "layer": "top",
     "position": "top",
@@ -9,8 +8,7 @@
     "modules-left": [
       "custom/power",
       "hyprland/workspaces",
-      "mpris",
-      "hyprland/window"
+      "mpris"
     ],
     "modules-center": [
       "clock"
@@ -18,7 +16,7 @@
     "modules-right": [
       "tray",
       "backlight",
-      "pulseaudio",
+      "group/volume",
       "battery",
       "custom/swaync"
     ],
@@ -49,24 +47,6 @@
         "stopped": ""
       }
     },
-    "hyprland/window": {
-      "format": "{title}",
-      "separate-outputs": true,
-      "rewrite": {
-        "(.*) — Zen Browser": "󰗝  $1",
-        "(.*) - Google Chrome": "  $1",
-        "(.*) - Visual Studio Code": "󰨞  $1",
-        "(.*) - Code - OSS": "󰨞  $1",
-        "^nvim (.*)": "  $1",
-        "(.*) - Obsidian(.*)": "󱓧  $1",
-        "^/home/edward/.*/(.*\\.pdf)$": "  $1",
-        "(.*) - kitty": "  $1",
-        "yazi: (.*)": "  $1",
-        "nwg-look": "  GTK Settings",
-        "Qt6 Configuration Tool": "  QT Settings",
-        "overskride": "󰂯 Bluetooth Settings"
-      }
-    },
     "clock": {
       "format": "  {:%a %b %e %I:%M}",
       "tooltip-format": "<tt>{calendar}</tt>",
@@ -87,26 +67,43 @@
       ],
       "tooltip": false
     },
+    "group/volume": {
+        "orientation": "horizontal",
+        "drawer": {
+          "transition-duration": 400,
+          "children-class": "not-power",
+          "transition-left-to-right": false
+        },
+        "modules": [
+            "pulseaudio",
+            "pulseaudio/slider"
+        ]
+    },
     "pulseaudio": {
       "format": "{icon} <b>{volume}%</b>",
       "format-muted": " 󰝟 ",
       "format-bluetooth": "{icon}  <b>{volume}%</b>",
       "format-bluetooth-muted": "󰝟 ",
       "format-icons": {
+        "headphone": "",
+        "hands-free": "",
         "headset": "",
+        "phone": "",
+        "portable": "",
+        "car": "",
         "default": [
           "󰕿",
           "󰖀",
           "󰕾"
         ]
       },
-      "tooltip": true,
-      "on-click": "pavucontrol",
-      "ignored-sinks": [
-        "JamesDSP Sink",
-        "Easy Effects Sink",
-        "HDA NVidia Digital Stereo (HDMI)"
-      ]
+    },
+    "pulseaudio/slider": {
+        "min": 0,
+        "max": 100,
+        "rotate": 0,
+        "device": "pulseaudio",
+        "scroll-step": 1,
     },
     "battery": {
       "format": "{icon} {capacity}%",
@@ -134,4 +131,3 @@
       "on-click": "~/.config/hypr/scripts/wlogout.sh"
     }
   }
-]

@@ -24,7 +24,6 @@ return {
         path = "~/Documents/vault/",
       },
     },
-
     mappings = {
       ["<leader>ch"] = {
         action = function()
@@ -32,6 +31,12 @@ return {
         end,
         opts = { buffer = true },
       },
+    },
+    completions = {
+      -- Set to fasle to disable completions
+      nvim_cmp = true,
+      -- Minimum amount of characters for completion to trigger
+      min_chars = 3,
     },
   },
 }

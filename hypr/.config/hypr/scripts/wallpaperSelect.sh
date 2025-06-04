@@ -48,6 +48,9 @@ set_wallpaper() {
   # Generate pywal colors from wallpaper
   wal -i "$1" -n
 
+  # Update zathura theme
+  zathura-pywal -a 0.9
+
   # Execute reload script
   if [[ -x "$reload" ]]; then
     "$reload"
