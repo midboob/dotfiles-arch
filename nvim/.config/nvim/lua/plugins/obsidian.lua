@@ -31,6 +31,12 @@ return {
         end,
         opts = { buffer = true },
       },
+      ["gf"] = {
+        action = function()
+          return require("obsidian").util.gf_passthrough()
+        end,
+        opts = { noremap = false, expr = true, buffer = true },
+      },
     },
     completions = {
       -- Set to fasle to disable completions
