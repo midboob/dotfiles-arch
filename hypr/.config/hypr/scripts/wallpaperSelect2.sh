@@ -1,24 +1,11 @@
 #!/usr/bin/env bash
+## /* ---- 🌛 https://github.com/JaKooLit 🌛 ---- */  ##
+# Wallpaper selector using swww and rofi, only runs matugen (no wallpaper change)
 
 # Config
 wallpaperDir="$HOME/Pictures/wallpapers"
 themesDir="$HOME/.config/rofi/themes"
 reload="$HOME/.config/hypr/scripts/reload.sh" # Reload swaync, waybar, and rofi
-
-# Transition settings
-FPS=60
-TYPE="any"
-DURATION=2
-BEZIER="0.4,0.2,0.4,1.0"
-SWWW_PARAMS="--transition-fps ${FPS} --transition-type ${TYPE} --transition-duration ${DURATION} --transition-bezier ${BEZIER}"
-
-# Ensure swww is running
-if command -v swww &>/dev/null; then
-  swww query || swww init
-else
-  echo "swww is not installed."
-  exit 1
-fi
 
 # Get wallpaper list
 PICS=($(find -L "${wallpaperDir}" -type f \( -iname \*.jpg -o -iname \*.jpeg -o -iname \*.png -o -iname \*.gif \) | sort))
@@ -38,23 +25,15 @@ menu() {
   done
 }
 
-# Set wallpaper and run post-script
+# Only run matugen and optional post-processing
 set_wallpaper() {
-  swww img "$1" ${SWWW_PARAMS}
   ln -sf "$1" "$HOME/.current_wallpaper"
-
-  # Generate matugen colors
   matugen image "$1"
-
-  # Execute reload script
-  if [[ -x "$reload" ]]; then
-    "$reload"
-  fi
+  [[ -x "$reload" ]] && "$reload"
 }
 
 # Main logic
 main() {
-  # Kill existing rofi to avoid UI issues
   pidof rofi >/dev/null && pkill rofi
 
   choice=$(menu | rofi -show -dmenu \
