@@ -9,6 +9,7 @@ kitty/.config/kitty/colors.conf
 qt/.config/qt5ct/colors/matugen-qt5ct.conf
 qt/.config/qt6ct/colors/matugen-qt6ct.conf
 spicetify/.config/spicetify/Themes/Comfy/color.ini
+spicetify/.config/spicetify/Themes/text/color.ini
 vesktop/.config/vesktop/themes/midnight.theme.css
 yazi/.config/yazi/theme.toml
 zathura/.config/zathura/zathurarc
