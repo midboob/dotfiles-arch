@@ -21,7 +21,7 @@
       "custom/swaync"
     ],
     "custom/swaync": {
-      "format": "\udb82\udcc7",
+      "format": "♥",
       "on-click": "swaync-client -t"
     },
     "hyprland/workspaces": {
@@ -123,7 +123,7 @@
         "warning": 30,
         "critical": 15
       },
-      "on-click": "~/.config/hypr/scripts/wlogout.sh"
+      "on-click": "~/.config/rofi/scripts/powermenu.sh"
     },
     "custom/power": {
       "format": "",

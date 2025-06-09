@@ -1,42 +1,42 @@
-@import "../../.cache/wal/colors-waybar.css";
+@import "colors.css";
 
 #waybar.top {
   background: none;
 }
 
 #waybar.top > box.horizontal {
-  background: @color0;
-  box-shadow: 0 0 4pt @color0;
+  background: @surface_dim;
+  box-shadow: 0 0 4pt @surface_dim;
   border-radius: 12pt;
   background-clip: padding-box;
-  margin: 5pt;
-  padding: 1pt;
+  margin: 6pt;
+  padding: 2pt;
 }
 
 #custom-swaync {
   margin-right: 11pt;
   font-size: 12pt;
-  color: @color1;
+  color: @primary;
 }
 
 #clock {
-  color: @color15;
+  color: @on_surface;
 }
 
 #workspaces {
   margin-left: 12pt;
 }
 #workspaces button {
-  color: @color8;
+  color: @outline_variant;
 }
 #workspaces button:not(:first-child) {
   margin-left: 2pt;
 }
 #workspaces button.visible {
-  color: @color11;
+  color: @tertiary;
 }
 #workspaces button.active {
- color: @color11;
+ color: @secondary;
 }
 #workspaces button:hover, #workspaces button:focus {
   background: none;
@@ -44,12 +44,12 @@
   box-shadow: none;
 }
 #workspaces button:hover:not(.active):not(.visible), #workspaces button:focus:not(.active):not(.visible) {
-  color: @color7;
+  color: @on_surface_variant;
 }
 
 #mpris {
-  background: @color0;
-  color: @color15;
+  background: @surface_container_high;
+  color: @on_secondary_container;
   border-radius: 12pt;
   margin-left: 15pt;
   padding: 0 8pt;
@@ -58,25 +58,25 @@
 #window {
   margin-left: 15pt;
   margin-right: 20pt;
-  color: @color7;
+  color: @on_surface_variant;
 }
 
 #memory {
-  color: @color11;
+  color: @on_error_container;
   margin-right: 12pt;
 }
 
 #tray {
-  background: @color0;
-  box-shadow: 0 0 4pt @color0;
+  background: @surface_dim;
+  box-shadow: 0 0 4pt @surface_dim;
   border-radius: 12pt;
   margin-right: 10pt;
   padding: 2pt;
 }
 
 #tray menu {
-  background: @color0;
-  color: @color15;
+  background: @surface_container_high;
+  color: @on_surface;
   border-radius: 8pt;
   padding: 4pt;
 }
@@ -90,23 +90,23 @@
 }
 
 #tray menu item:hover {
-  background: @color8;
+  background: @surface_bright;
   color: @on_primary;
 }
 
 @keyframes blink {
   to {
     background-color: rgba(30, 34, 42, 0.5);
-    color: @color15;
+    color: @on_surface;
   }
 }
 #backlight {
-  color: @color14;
+  color: @on_tertiary_container;
   margin-right: 10pt;
 }
 
 #pulseaudio {
-  color: @color15;
+  color: @on_surface;
   margin-right: 10pt;
 }
 
@@ -135,7 +135,7 @@
 }
 
 #battery {
-  color: @color2;
+  color: @secondary_fixed_dim;
   margin-right: 15pt;
 }
 
@@ -143,11 +143,11 @@
 #battery.good,
 #battery.charging,
 #battery.plugged {
-  color: @color15;
+  color: @on_secondary_container;
 }
 
 #battery.critical:not(.charging) {
-  color: @color1;
+  color: @error;
   animation-name: blink;
   animation-duration: 0.5s;
   animation-timing-function: linear;
@@ -174,7 +174,7 @@
   margin-left: 11pt;
   padding-right: 3pt;
   font-size: 10pt;
-  color: @color1;
+  color: @primary;
 }
 
 #custom-file-manager {
@@ -540,8 +540,8 @@
 }
 
 tooltip {
-  background: @color0;
-  color: @color15;
+  background: @surface_dim;
+  color: @on_surface;
   border-radius: 5pt;
 }
 
