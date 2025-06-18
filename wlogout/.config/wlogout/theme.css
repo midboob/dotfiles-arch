@@ -1,14 +1,14 @@
 /* Importing matugen colors */
-@import '../../.config/waybar/colors.css';
+@import '../../.config/waybar/themes/matugen-waybar.css';
 
 
 window {
     font-family: GeistMono Nerd Font Propo;
     font-size: 16pt;
-    color: transparent; /* text */
+    color: @foreground; /* use themed text color */
     text-shadow: none;
     background-color: @surface-alpha;
-} 
+}
 
 button {
     background-repeat: no-repeat;

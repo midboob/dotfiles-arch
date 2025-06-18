@@ -1,4 +1,4 @@
-@import "colors.css";
+@import "themes/matugen-waybar.css";
 
 #waybar.top {
   background: none;
