@@ -26,14 +26,15 @@ return {
     { prefix .. "w", "<cmd>Obsidian workspace<CR>", desc = "Workspace" },
     { prefix .. "r", "<cmd>Obsidian rename<CR>", desc = "Rename" },
     { prefix .. "i", "<cmd>Obsidian paste_img<CR>", desc = "Paste Image" },
+    { prefix .. "p", "<cmd>MarkdownPreview<CR>", desc = "Preview File" },
   },
 
   opts = {
     workspaces = {
-      {
-        name = "notes",
-        path = "~/Documents/notes/",
-      },
+      -- {
+      --   name = "notes",
+      --   path = "~/Documents/notes/",
+      -- },
       {
         name = "notes",
         path = "/mnt/Storage/Documents/notes/",
@@ -74,8 +75,42 @@ return {
       enable = false,
     },
 
+    disable_frontmatter = false,
+
+    ---@return table
+    note_frontmatter_func = function(note)
+      -- Add the title of the note as an alias.
+      if note.title then
+        note:add_alias(note.title)
+      end
+
+      local out = {
+        id = note.id,
+        aliases = note.aliases,
+        tags = note.tags,
+        links = note.metadata and note.metadata.links or {}, -- Preserve existing links
+      }
+
+      -- `note.metadata` contains any manually added fields in the frontmatter.
+      -- So here we just make sure those fields are kept in the frontmatter.
+      if note.metadata ~= nil and not vim.tbl_isempty(note.metadata) then
+        for k, v in pairs(note.metadata) do
+          out[k] = v
+        end
+      end
+
+      return out
+    end,
+
+    note_id_func = function(title)
+      return title
+    end,
+    note_path_func = function(spec)
+      return spec.dir / (spec.title .. ".md")
+    end,
+
     picker = {
-      name = "telescope.nvim",
+      name = "snacks.pick",
       note_mappings = {
         new = "<C-x>",
         insert_link = "<C-l>",

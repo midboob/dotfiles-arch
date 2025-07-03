@@ -3,47 +3,66 @@ return {
   opts = {
     dashboard = {
       enabled = true,
-      preset = {
-        pick = function(cmd, opts)
-          return LazyVim.pick(cmd, opts)()
-        end,
-        header = [[
-        ⠀⠀⣀⣀⡀⠀⠀⣀⣀⣀⣀⣀⣀⠀⠀⠀⣀⣀⣀⠀⠀⠀⠀⠀⣀⣀⠀⠀⠀⠀⣀⣀⡀⠀⢀⣀⡀⠀⢀⣀⣀⣀⣀⣀⡀⠀⠀
-        ⣴⣿⠟⠛⢿⣦⡀⣿⡟⠛⠛⠛⣿⣷⣰⣿⠟⠛⢿⣷⡄⢠⣠⣤⣿⠻⠗⠀⣴⣿⠟⠛⢿⣦⣸⣿⣧⣾⡿⢛⣿⡿⠟⠻⣿⣦⠀
-        ⣿⡇⠀⠀⠀⣿⡇⣿⣷⣄⡀⠀⠉⠁⣿⣇⠀⠀⠀⣿⡇⣀⡉⠻⢿⣶⣄⡰⣿⣇⠀⠀⠀⣿⡿⣿⣿⣅⡀⢸⣿⡀⠀⠀⢸⣿⠀
-        ⠙⠿⣷⣶⣦⣿⡇⠛⠋⠛⢿⣷⣤⡀⠙⠿⣷⣶⡦⣿⡇⢿⣷⣶⣶⣿⣿⣿⠙⠿⣷⣶⡆⣿⡟⠛⠋⠻⢿⣶⣿⣿⣷⣶⣼⣿ 
-        ]],
-       -- stylua: ignore
-       ---@type snacks.dashboard.Item[]
-        keys = {
-			{ icon = " ", key = "n", desc = "New File", action = ":ene | startinsert" },
-			{ icon = " ", key = "f", desc = "Find File", action = ":lua Snacks.dashboard.pick('files')" },
-			{ icon = " ", key = "c", desc = "Config", action = ":lua Snacks.dashboard.pick('files', {cwd = vim.fn.stdpath('config')})" },
-{
-  icon = "  ",
-  key = "o",
-  desc = "Find File in Notes",
-  action = function()
-    local uv = vim.loop
-    local notes_paths = {
-      vim.fn.expand("~/Documents/notes/"),
-      vim.fn.expand("/mnt/Storage/Documents/notes/"),
-    }
+      width = 18,
+      sections = {
+        -- stylua: ignore start
+        { hidden = true, icon = " ", key = "t", desc = "Find [T]ext", action = ":lua Snacks.dashboard.pick('live_grep')" },
+        { hidden = true, icon = " ", key = "o", desc = "[O]bsidian",   action = ":lua Snacks.dashboard.pick('files', { cwd = '/mnt/Storage/Documents/notes/' })" },
+        { hidden = true, icon = "󰒲 ", key = "l", desc = "[L]azy", action = ":Lazy" },
+        -- stylua: ignore end
 
-    for _, path in ipairs(notes_paths) do
-      local stat = uv.fs_stat(path)
-      if stat and stat.type == "directory" then
-        require("telescope.builtin").find_files({ cwd = path })
-        return
-      end
-    end
-
-    vim.notify("No valid notes directory found on this system.", vim.log.levels.ERROR)
-  end,
-},
-			{ icon = " ", key = "q", desc = "Quit", action = ":qa" },
+        -- Header
+        { text = " ", padding = 12 },
+        {
+          padding = 2,
+          text = {
+            { "Neovim :: Welcome back pɹɐʍpǝ", hl = "Title" },
+          },
+          action = ":lua Snacks.dashboard.pick('files')",
+          key = "f",
         },
+
+        -- Keys
+        {
+          padding = 1,
+          text = {
+            { "  [F]ind File", width = 19, hl = "Function" },
+            { "  [O]bsidian", hl = "Function" },
+          },
+          action = ":lua Snacks.dashboard.pick('files')",
+          key = "f",
+        },
+        {
+          padding = 1,
+          text = {
+            { " ", width = 13 },
+            { "  [N]ew File", hl = "Function" },
+            { " ", width = 6 },
+            { "󰒲  [L]azy", hl = "Function" },
+            { " ", width = 17 },
+          },
+          action = ":ene | startinsert",
+          key = "n",
+        },
+        {
+          padding = 2,
+          text = {
+            { " ", width = 9 },
+            { "  [C]onfig", hl = "Function" },
+            { " ", width = 8 },
+            { "  [Q]uit", hl = "Function" },
+            { " ", width = 14 },
+          },
+          action = ":lua Snacks.dashboard.pick('files', {cwd = vim.fn.stdpath('config')})",
+          key = "c",
+        },
+
+        --  Startup
+        { section = "startup", padding = 1 },
+        { section = "terminal", cmd = "printf ' '", height = 15 },
       },
+
+      formats = { key = { "" } },
     },
 
     image = {
@@ -72,8 +91,8 @@ return {
       end,
       doc = {
         enable = true,
-        inline = true,
-        float = false,
+        inline = false,
+        float = true,
         max_width = 80,
         max_height = 40,
       },

@@ -6,7 +6,7 @@ vim.loader.enable()
 
 -- LazyVim global options
 go.lazyvim_cmp = "blink"
-go.lazyvim_picker = "telescope"
+go.lazyvim_picker = "snacks"
 
 -- Define leader key
 go.mapleader = " "
@@ -40,7 +40,7 @@ o.showtabline = 0
 
 -- Enable spell checking
 o.spell = true
-o.spelllang:append("es")
+o.spelllang:append("en")
 
 -- Backspacing and indentation when wrapping
 o.backspace = { "start", "eol", "indent" }

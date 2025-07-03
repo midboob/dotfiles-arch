@@ -1,6 +1,7 @@
 return {
   "neovim/nvim-lspconfig",
   opts = {
+    cmd = { "qmlls", "-E" },
     diagnostics = {
       virtual_text = {
         float = {

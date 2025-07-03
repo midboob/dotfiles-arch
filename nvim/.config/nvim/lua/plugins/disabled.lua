@@ -1,8 +1,3 @@
--- Delete this condition if you want to execute the file
-if true then
-  return {}
-end
-
 local disabled = {
   {
     "akinsho/bufferline.nvim",

@@ -1,5 +1,7 @@
 return {
   "saghen/blink.cmp",
+  version = "*",
+  dependencies = { "rafamadriz/friendly-snippets" },
   opts = {
     completion = {
       menu = {
@@ -10,9 +12,6 @@ return {
           border = "rounded",
         },
       },
-    },
-    snippets = {
-      preset = "luasnip",
     },
   },
 }

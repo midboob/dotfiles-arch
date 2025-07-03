@@ -61,25 +61,3 @@ ac("BufEnter", {
     vim.cmd("setlocal formatoptions-=cro")
   end,
 })
-
--- auto obsidian workspace detection
-local obsidian = require("obsidian")
-local vault_dirs = {
-  "~/Documents/notes/",
-  "/mnt/Storage/Documents/notes/",
-}
-
-local function configure_obsidian()
-  local cwd = vim.fn.getcwd()
-  for _, dir in ipairs(vault_dirs) do
-    if cwd:find(vim.fn.expand(dir)) == 1 then
-      obsidian.setup({ dir = dir })
-      return
-    end
-  end
-end
-
-vim.api.nvim_create_autocmd("DirChanged", {
-  pattern = "*",
-  callback = configure_obsidian,
-})

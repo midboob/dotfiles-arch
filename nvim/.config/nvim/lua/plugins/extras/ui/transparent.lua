@@ -1,4 +1,4 @@
 return {
-  "xiyaowong/nvim-transparent",
-  opts = {},
+  "xiyaowong/transparent.nvim",
+  lazy = false,
 }

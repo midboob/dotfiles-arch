@@ -1,11 +1,12 @@
 return {
   "MeanderingProgrammer/render-markdown.nvim",
-  enabled = true,
   dependencies = {
     "nvim-treesitter/nvim-treesitter",
-    "echasnovski/mini.nvim",
+    "echasnovski/mini.icons",
   },
   ft = { "markdown" },
+  ---@module 'render-markdown'
+  ---@type render.md.UserConfig
   opts = {
     checkbox = {
       enabled = true,
