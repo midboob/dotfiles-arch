@@ -6,8 +6,7 @@
     "margin-left": 4,
     "margin-right": 4,
     "modules-left": [
-      "custom/power",
-      "hyprland/workspaces",
+     "hyprland/workspaces",
       "mpris"
     ],
     "modules-center": [
@@ -17,6 +16,7 @@
       "tray",
       "backlight",
       "group/volume",
+      "group/background-apps",
       "battery",
       "custom/swaync"
     ],
@@ -38,12 +38,12 @@
       "tooltip-format": "{player} ({status})\r{artist} - {title}\r\rLeft-Click:   Play / Pause\rMiddle-Click: Previous Track\rRight-Click:  Next Track",
       "title-len": 20,
       "player-icons": {
-        "default": "▶",
+        "default": "",
         "mpv": "",
         "spotify": "󰓇"
       },
       "status-icons": {
-        "paused": "",
+        "paused": "▶",
         "stopped": ""
       }
     },
@@ -124,10 +124,5 @@
         "critical": 15
       },
       "on-click": "~/.config/rofi/scripts/powermenu.sh"
-    },
-    "custom/power": {
-      "format": "",
-      "tooltip": false,
-      "on-click": "~/.config/hypr/scripts/wlogout.sh"
     }
   }

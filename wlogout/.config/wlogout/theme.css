@@ -6,7 +6,6 @@ window {
     font-family: GeistMono Nerd Font Propo;
     font-size: 16pt;
     color: @foreground; /* use themed text color */
-    text-shadow: none;
     background-color: @surface-alpha;
 }
 
