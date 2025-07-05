@@ -23,18 +23,6 @@
       "keyColor": "blue",
     },
     {
-      "type": "host",
-      "format": "{1}",
-      "key": "host  ",
-      "keyColor": "blue",
-    },
-    {
-      "type": "kernel",
-      "format": "{2}",
-      "key": "kernel",
-      "keyColor": "blue",
-    },
-    {
       "type": "uptime",
       "format": "{1}d {2}h {3}m",
       "key": "uptime",

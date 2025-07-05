@@ -48,7 +48,7 @@ return {
         end,
         opts = { noremap = false, expr = true, buffer = true },
       },
-      ["<C-c>"] = {
+      ["<M-c>"] = {
         action = function()
           return require("obsidian").util.toggle_checkbox()
         end,

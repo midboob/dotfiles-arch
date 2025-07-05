@@ -7,7 +7,7 @@
 #waybar.top > box.horizontal {
   background: @surface_dim;
   box-shadow: 0 0 4pt @surface_dim;
-  border-radius: 12pt;
+  border-radius: 4pt;
   background-clip: padding-box;
   margin: 6pt;
   padding: 2pt;
