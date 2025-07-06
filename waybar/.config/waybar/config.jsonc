@@ -7,14 +7,13 @@
     "margin-right": -2,
     "modules-left": [
      "hyprland/workspaces",
-      "mpris"
     ],
     "modules-center": [
       "clock"
     ],
     "modules-right": [
       "tray",
-      "group/backlight",
+      "backlight",
       "group/volume",
       "group/background-apps",
       "battery",
@@ -27,21 +26,6 @@
       "sort-by-number": true,
       "active-only": false
     },
-    "mpris": {
-      "format": "{player_icon} {artist} - {title}",
-      "format-paused": "{status_icon} {artist} - {title}",
-      "tooltip-format": "{player} ({status})\r{artist} - {title}\r\rLeft-Click:   Play / Pause\rMiddle-Click: Previous Track\rRight-Click:  Next Track",
-      "title-len": 20,
-      "player-icons": {
-        "default": "",
-        "mpv": "",
-        "spotify": "󰓇"
-      },
-      "status-icons": {
-        "paused": "▶",
-        "stopped": ""
-      }
-    },
     "clock": {
       "format": "  {:%a %b %e %I:%M}",
       "tooltip-format": "<tt>{calendar}</tt>",
@@ -53,19 +37,6 @@
       "icon-size": 15,
       "spacing": 10
     },
-    "group/backlight": {
-            "orientation": "horizontal",
-            "drawer": {
-              "transition-duration": 400,
-              "children-class": "not-power",
-              "transition-left-to-right": false
-            },
-            "modules": [
-                "backlight",
-                "backlight/slider"
-            ],
-        "tooltip": false
-    },
     "backlight": {
       "format": "{icon} <b>{percent}%</b>",
       "format-icons": [
@@ -74,13 +45,6 @@
         "󰃠"
       ],
       "tooltip": false
-    },
-    "backlight/slider": {
-        "min": 0,
-        "max": 100,
-        "rotate": 0,
-        "device": "backlight",
-        "scroll-step": 1
     },
     "group/volume": {
         "orientation": "horizontal",

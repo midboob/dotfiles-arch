@@ -41,14 +41,6 @@
   color: @on_surface_variant;
 }
 
-#mpris {
-  background: @surface_container_high;
-  color: @on_secondary_container;
-  border-radius: 12pt;
-  margin-left: 15pt;
-  padding: 0 8pt;
-}
-
 #window {
   margin-left: 15pt;
   margin-right: 20pt;
@@ -104,7 +96,6 @@
   margin-right: 10pt;
 }
 
-#backlight-slider slider,
 #pulseaudio-slider slider {
     background-color: @primary;
     background-color: transparent;
@@ -112,18 +103,15 @@
     margin-right: 7px;
 }
 
-#backlight-slider slider:hover,
 #pulseaudio-slider slider:hover{
   background-color: transparent;
 }
 
 
-#backlight-slider slider:active,
 #pulseaudio-slider slider:active {
   background-color: transparent;
 }
 
-#backlight-slider trough,
 #pulseaudio-slider trough {
     margin-top: -3px;
     min-width: 90px;
@@ -133,7 +121,6 @@
     background: @outline_variant;
 }
 
-#backlight-slider highlight,
 #pulseaudio-slider highlight {
     border-radius: 8px;
     background-color: @primary;
