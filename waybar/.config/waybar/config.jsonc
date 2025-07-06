@@ -14,7 +14,7 @@
     ],
     "modules-right": [
       "tray",
-      "backlight",
+      "group/backlight",
       "group/volume",
       "group/background-apps",
       "battery",
@@ -58,6 +58,19 @@
       "icon-size": 15,
       "spacing": 10
     },
+    "group/backlight": {
+            "orientation": "horizontal",
+            "drawer": {
+              "transition-duration": 400,
+              "children-class": "not-power",
+              "transition-left-to-right": false
+            },
+            "modules": [
+                "backlight",
+                "backlight/slider"
+            ],
+        "tooltip": false
+    },
     "backlight": {
       "format": "{icon} <b>{percent}%</b>",
       "format-icons": [
@@ -66,6 +79,13 @@
         "󰃠"
       ],
       "tooltip": false
+    },
+    "backlight/slider": {
+        "min": 0,
+        "max": 100,
+        "rotate": 0,
+        "device": "backlight",
+        "scroll-step": 1
     },
     "group/volume": {
         "orientation": "horizontal",
