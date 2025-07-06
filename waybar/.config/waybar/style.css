@@ -112,9 +112,21 @@
 
 #backlight-slider slider,
 #pulseaudio-slider slider {
+    background-color: @primary;
     background-color: transparent;
     box-shadow: none;
     margin-right: 7px;
+}
+
+#backlight-slider slider:hover,
+#pulseaudio-slider slider:hover{
+  background-color: transparent;
+}
+
+
+#backlight-slider slider:active,
+#pulseaudio-slider slider:active {
+  background-color: transparent;
 }
 
 #backlight-slider trough,

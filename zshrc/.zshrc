@@ -161,7 +161,3 @@ setopt MENU_COMPLETE        # Automatically highlight first element of completio
 setopt LIST_PACKED	    # The completion menu takes less space.
 setopt AUTO_LIST            # Automatically list choices on ambiguous completion.
 setopt COMPLETE_IN_WORD     # Complete from both ends of a word.
-
-
-eval "$(zoxide init zsh)"
-source <(fzf --zsh)
