@@ -284,8 +284,5 @@ if [[ "$DRY_RUN" == "true" ]]; then
 else
   print_success "Dotfiles installed successfully!"
   echo ""
-  echo "🔄 You may need to:"
-  echo "  • Reboot to ensure all services are running properly"
-  echo "  • Log out and back in for desktop environment changes"
-  echo "  • Run 'source ~/.zshrc' if you installed zsh configuration"
+  echo "🔄 Reboot to ensure all services are running properly"
 fi
