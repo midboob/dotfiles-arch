@@ -143,6 +143,9 @@ alias notes="/mnt/Storage/Documents/notes/"
 # spicetify alias
 alias "spicetify update"="spicetify restore backup apply"
 
+# dotfiles alias
+alias "dotfiles"="~/dotfiles/"
+
 # Custom sudo prompt
 export SUDO_PROMPT="$fg[white]need $fg[blue]password $fg[red]for root:󰌾 $fg[white]"
 

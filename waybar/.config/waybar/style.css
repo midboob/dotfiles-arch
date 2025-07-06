@@ -13,12 +13,6 @@
   padding: 2pt;
 }
 
-#custom-swaync {
-  margin-right: 11pt;
-  font-size: 12pt;
-  color: @primary;
-}
-
 #clock {
   color: @on_surface;
 }

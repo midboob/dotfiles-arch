@@ -18,12 +18,7 @@
       "group/volume",
       "group/background-apps",
       "battery",
-      "custom/swaync"
     ],
-    "custom/swaync": {
-      "format": "♥",
-      "on-click": "swaync-client -t"
-    },
     "hyprland/workspaces": {
       "all-outputs": true,
       "format": "{name}",
