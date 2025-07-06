@@ -204,6 +204,7 @@ declare -A module_map=(
   [16]="zshrc"
   [17]="wallpapers"
   [18]="mpv"
+  [19]="startpage"
   [0]="ALL"
 )
 
