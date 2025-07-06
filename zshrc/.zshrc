@@ -98,21 +98,18 @@ alias lf="lfcd"
 alias locate="plocate"
 alias tp="trash-put"
 alias tpr="trash-restore"
-alias cat='bat --theme=matugen-bat-colors'
-alias grep='grep --color=always'
+alias cat="bat --theme=matugen-bat-colors"
+alias grep="grep --color=always"
 
 # application aliases
 alias v="$EDITOR"
 alias vim="$EDITOR"
-alias nb="newsboat"
 alias za="zathura"
 alias code="vscodium"
 alias ytdl="yt-dlp --no-mtime"
-alias swi="swayimg-hyprland.sh"
-alias sysm="sysmaintenance.sh
 
 # aliases to clean up home directory
-alias wget="wget --hsts-file="$XDG_DATA_HOME/wget-hsts"
+alias wget='wget --hsts-file="$XDG_DATA_HOME/wget-hsts"'
 
 # git aliases
 alias g="git"
@@ -164,7 +161,3 @@ setopt MENU_COMPLETE        # Automatically highlight first element of completio
 setopt LIST_PACKED	    # The completion menu takes less space.
 setopt AUTO_LIST            # Automatically list choices on ambiguous completion.
 setopt COMPLETE_IN_WORD     # Complete from both ends of a word.
-
-
-eval "$(zoxide init zsh)"
-source <(fzf --zsh)

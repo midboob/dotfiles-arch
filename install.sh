@@ -48,17 +48,17 @@ print_info "Installing dependencies..."
 # Package groups for better organization
 declare -A package_groups=(
   ["Desktop Environment"]="hyprland hyprpolkitagent qt5-wayland qt6-wayland xdg-desktop-portal-hyprland"
-  ["System Utilities"]="brightnessctl btop fastfetch fd git ntfs-3g stow tmux unzip yazi yt-dlp bottom pulsemixer gvfs"
+  ["System Utilities"]="brightnessctl btop fastfetch fd git ntfs-3g stow tmux unzip yazi yt-dlp bottom pulsemixer gvfs 7zip"
   ["Audio/Video"]="pipewire pipewire-alsa pipewire-jack pipewire-pulse pavucontrol cava mpv gst-plugins-bad"
   ["Development"]="cmake code neovim typst"
-  ["Applications"]="anki bleachbit gimp gnome-calculator obsidian steam vesktop zathura zathura-pdf-poppler"
+  ["Applications"]="anki bleachbit gimp gnome-calculator obsidian steam vesktop zathura zathura-pdf-poppler localsend-bin"
   ["Fonts"]="noto-fonts noto-fonts-cjk noto-fonts-emoji noto-fonts-extra nerd-fonts"
-  ["Theming/Customization"]="matugen-bin oh-my-posh spicetify-cli nwg-look"
+  ["Theming/Customization"]="matugen-bin oh-my-posh spicetify-cli nwg-look gtk-engine-murrine gnome-themes-extra sassc capitaine-cursors"
   ["Networking/Bluetooth"]="bluetui bluez bluez-deprecated-tools bluez-utils nm-connection-editor"
   ["AUR Packages"]="ani-cli-git brave-nightly-bin spotify switcheroo overskride"
   ["Wayland/UI"]="waybar rofi sddm swaync wl-clipboard wlogout swww hypridle hyprlock"
   ["Terminal/Shell"]="kitty zsh gnome-keyring"
-  ["System Services"]="power-profiles-daemon os-prober openrgb"
+  ["System Services"]="power-profiles-daemon os-prober openrgb exa"
 )
 
 # Ask user which package groups to install
@@ -204,6 +204,7 @@ declare -A module_map=(
   [16]="zshrc"
   [17]="wallpapers"
   [18]="mpv"
+  [19]="startpage"
   [0]="ALL"
 )
 
@@ -284,8 +285,5 @@ if [[ "$DRY_RUN" == "true" ]]; then
 else
   print_success "Dotfiles installed successfully!"
   echo ""
-  echo "🔄 You may need to:"
-  echo "  • Reboot to ensure all services are running properly"
-  echo "  • Log out and back in for desktop environment changes"
-  echo "  • Run 'source ~/.zshrc' if you installed zsh configuration"
+  echo "🔄 Reboot to ensure all services are running properly"
 fi
