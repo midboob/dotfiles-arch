@@ -20,7 +20,7 @@ require("lazy").setup({
       "LazyVim/LazyVim",
       import = "lazyvim.plugins",
       opts = {
-        colorscheme = "neopywal",
+        colorscheme = "tokyonight",
       },
     },
     { import = "plugins" },

@@ -1,0 +1,15 @@
+#!/bin/bash
+
+STATE_FILE="/tmp/hyprsunset_state"
+
+if [ -f "$STATE_FILE" ]; then
+  # Turn off hyprsunset
+  hyprctl hyprsunset identity
+  rm "$STATE_FILE"
+  notify-send "Hyprsunset disabled" --app-name=Hyprsunset
+else
+  # Turn on hyprsunset
+  hyprctl hyprsunset temperature 3000
+  touch "$STATE_FILE"
+  notify-send "Hyprsunset enabled (3000K)" --app-name=Hyprsunset
+fi

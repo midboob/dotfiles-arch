@@ -6,9 +6,9 @@ return {
       width = 18,
       sections = {
         -- stylua: ignore start
-        { hidden = true, icon = " ", key = "t", desc = "Find [T]ext", action = ":lua Snacks.dashboard.pick('live_grep')" },
         { hidden = true, icon = " ", key = "o", desc = "[O]bsidian",   action = ":lua Snacks.dashboard.pick('files', { cwd = '/mnt/Storage/Documents/notes/' })" },
         { hidden = true, icon = "󰒲 ", key = "l", desc = "[L]azy", action = ":Lazy" },
+        { hidden = true, icon = " ", key = "q", desc = "Quit", action = ":qa" },
         -- stylua: ignore end
 
         -- Header

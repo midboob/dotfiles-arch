@@ -47,7 +47,7 @@ print_info "Installing dependencies..."
 
 # Package groups for better organization
 declare -A package_groups=(
-  ["Desktop Environment"]="hyprland hyprpolkitagent qt5-wayland qt6-wayland xdg-desktop-portal-hyprland"
+  ["Desktop Environment"]="hyprland hyprpolkitagent qt5-wayland qt6-wayland xdg-desktop-portal-hyprland qt6-svg qt6-virtualkeyboard qt6-multimedia-ffmpeg"
   ["System Utilities"]="brightnessctl btop fastfetch fd git ntfs-3g stow tmux unzip yazi yt-dlp bottom pulsemixer gvfs 7zip"
   ["Audio/Video"]="pipewire pipewire-alsa pipewire-jack pipewire-pulse pavucontrol cava mpv gst-plugins-bad"
   ["Development"]="cmake code neovim typst"
@@ -57,7 +57,7 @@ declare -A package_groups=(
   ["Networking/Bluetooth"]="bluetui bluez bluez-deprecated-tools bluez-utils nm-connection-editor"
   ["AUR Packages"]="ani-cli-git brave-nightly-bin spotify switcheroo overskride"
   ["Wayland/UI"]="waybar rofi sddm swaync wl-clipboard wlogout swww hypridle hyprlock"
-  ["Terminal/Shell"]="kitty zsh gnome-keyring"
+  ["Terminal/Shell"]="zsh gnome-keyring ghostty kitty"
   ["System Services"]="power-profiles-daemon os-prober openrgb exa"
 )
 
