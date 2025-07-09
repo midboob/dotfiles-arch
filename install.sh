@@ -56,9 +56,9 @@ declare -A package_groups=(
   ["Theming/Customization"]="matugen-bin oh-my-posh spicetify-cli nwg-look gtk-engine-murrine gnome-themes-extra sassc capitaine-cursors"
   ["Networking/Bluetooth"]="bluetui bluez bluez-deprecated-tools bluez-utils nm-connection-editor"
   ["AUR Packages"]="ani-cli-git brave-nightly-bin spotify switcheroo overskride"
-  ["Wayland/UI"]="waybar rofi sddm swaync wl-clipboard wlogout swww hypridle hyprlock"
+  ["Wayland/UI"]="waybar rofi sddm swaync wl-clipboard wlogout swww hypridle hyprlock hyprcursor"
   ["Terminal/Shell"]="zsh gnome-keyring ghostty kitty"
-  ["System Services"]="power-profiles-daemon os-prober openrgb exa"
+  ["System Services"]="power-profiles-daemon os-prober openrgb eza"
 )
 
 # Ask user which package groups to install

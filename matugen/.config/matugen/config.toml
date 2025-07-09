@@ -37,15 +37,15 @@ output_path = '~/.config/zathura/zathurarc'
 input_path = '~/.config/matugen/templates/matugen-yazi.toml'
 output_path = '~/.config/yazi/theme.toml'
 
-# GTk3
-[templates.gtk3]
-input_path = '~/.config/matugen/templates/matugen-gtk.css'
-output_path = '~/.config/gtk-3.0/gtk.css'
-
-# GTk4
-[templates.gtk4]
-input_path = '~/.config/matugen/templates/matugen-gtk.css'
-output_path = '~/.config/gtk-4.0/gtk.css'
+# # GTk3
+# [templates.gtk3]
+# input_path = '~/.config/matugen/templates/matugen-gtk.css'
+# output_path = '~/.config/gtk-3.0/gtk.css'
+#
+# # GTk4
+# [templates.gtk4]
+# input_path = '~/.config/matugen/templates/matugen-gtk.css'
+# output_path = '~/.config/gtk-4.0/gtk.css'
 
 # Qt5
 [templates.qt5]
@@ -84,6 +84,34 @@ post_hook = 'swaync-client -rs'
 [templates.nvchad]
 input_path = '~/.config/matugen/templates/matugen-nvchad.lua'
 output_path = '~/.cache/wal/base46-dark.lua'
+
+[config.custom_colors.red]
+color = "#FF0000"
+blend = true
+
+[config.custom_colors.green]
+color = "#00FF00"
+blend = true
+
+[config.custom_colors.yellow]
+color = "#FFFF00"
+blend = true
+
+[config.custom_colors.blue]
+color = "#0000FF"
+blend = true
+
+[config.custom_colors.magenta]
+color = "#FF00FF"
+blend = true
+
+[config.custom_colors.cyan]
+color = "#00FFFF"
+blend = true
+
+[config.custom_colors.white]
+color = "#FFFFFF"
+blend = true
 
 # Neovim
 [templates.neovim]

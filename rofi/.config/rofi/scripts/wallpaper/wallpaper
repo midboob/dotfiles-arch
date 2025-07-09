@@ -15,8 +15,12 @@ theme="$HOME/.config/rofi/scripts/wallpaper/style.rasi"
 rofi_cmd="rofi -dmenu -i -show-icons -theme-str $(build_theme 4 3 12) -theme ${theme}"
 
 choice=$(
-  ls --escape "$wallpapers_dir" |
-    while read -r A; do echo -en "$A\x00icon\x1f$wallpapers_dir/$A\n"; done |
+  find "$wallpapers_dir" -maxdepth 1 -type f \( -iname "*.jpg" -o -iname "*.jpeg" -o -iname "*.png" -o -iname "*.webp" \) |
+    sort |
+    while read -r A; do
+      filename=$(basename "$A")
+      echo -en "$filename\x00icon\x1f$A\n"
+    done |
     $rofi_cmd
 )
 
@@ -34,6 +38,6 @@ swww img "$WALLPAPER" \
   --transition-fps 60 &&
   notify-send "Wallpaper Changed" -i "$WALLPAPER" --app-name=swww
 
-matugen image $WALLPAPER
+matugen image "$WALLPAPER"
 
 exit 0
