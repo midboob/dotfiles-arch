@@ -45,23 +45,21 @@ fi
 
 print_info "Installing dependencies..."
 
-# Package groups for better organization
 declare -A package_groups=(
   ["Desktop Environment"]="hyprland hyprpolkitagent qt5-wayland qt6-wayland xdg-desktop-portal-hyprland qt6-svg qt6-virtualkeyboard qt6-multimedia-ffmpeg"
-  ["System Utilities"]="brightnessctl btop fastfetch fd git ntfs-3g stow tmux unzip yazi yt-dlp bottom pulsemixer gvfs 7zip"
+  ["System Utilities"]="brightnessctl btop fastfetch fd git stow tmux unzip yazi yt-dlp bottom pulsemixer gvfs 7zip"
   ["Audio/Video"]="pipewire pipewire-alsa pipewire-jack pipewire-pulse pavucontrol cava mpv gst-plugins-bad"
   ["Development"]="cmake code neovim typst"
   ["Applications"]="anki bleachbit gimp gnome-calculator obsidian steam vesktop zathura zathura-pdf-poppler localsend-bin"
   ["Fonts"]="noto-fonts noto-fonts-cjk noto-fonts-emoji noto-fonts-extra nerd-fonts"
   ["Theming/Customization"]="matugen-bin oh-my-posh spicetify-cli nwg-look gtk-engine-murrine gnome-themes-extra sassc capitaine-cursors"
   ["Networking/Bluetooth"]="bluetui bluez bluez-deprecated-tools bluez-utils nm-connection-editor"
-  ["AUR Packages"]="ani-cli-git brave-nightly-bin spotify switcheroo overskride"
-  ["Wayland/UI"]="waybar rofi sddm swaync wl-clipboard wlogout swww hypridle hyprlock hyprcursor"
+  ["AUR Packages"]="ani-cli-git brave-nightly-bin zen-browser-bin spotify switcheroo overskride"
+  ["Wayland/UI"]="waybar rofi sddm swaync wl-clipboard wlogout swww hyprcursor"
   ["Terminal/Shell"]="zsh gnome-keyring ghostty kitty"
-  ["System Services"]="power-profiles-daemon os-prober openrgb eza"
+  ["System Services"]="power-profiles-daemon os-prober eza"
 )
 
-# Ask user which package groups to install
 echo -e "\n📦 Select package groups to install:"
 group_names=()
 i=1
@@ -97,7 +95,6 @@ echo -e "\n📋 Selected packages:"
 printf '%s\n' "${selected_packages[@]}" | sort
 
 if [[ "$DRY_RUN" == "false" ]]; then
-  # Install packages with error handling
   if ! yay -S --needed "${selected_packages[@]}"; then
     print_warning "Some packages failed to install."
     read -p "Continue with dotfiles installation anyway? (y/n): " continue_choice
@@ -111,9 +108,39 @@ else
   echo "[DRY RUN] Would install: ${selected_packages[*]}"
 fi
 
+# Additional prompt for laptop vs PC
+read -p "Are you installing on a laptop? (y/n): " is_laptop
+is_laptop=${is_laptop,,}
+
+if [[ "$DRY_RUN" == "false" ]]; then
+  if [[ "$is_laptop" == "y" || "$is_laptop" == "yes" ]]; then
+    print_info "Installing laptop-specific packages..."
+    laptop_packages=(
+      hypridle
+      hyprlock
+    )
+    yay -S --needed "${laptop_packages[@]}" && print_success "Laptop packages installed!"
+    # enable_service "tlp.service"
+  else
+    print_info "Installing PC-specific packages..."
+    pc_packages=(
+      openrgb
+      ntfs-3g
+      upscayl-bin
+    )
+    yay -S --needed "${pc_packages[@]}" && print_success "PC packages installed!"
+  fi
+else
+  if [[ "$is_laptop" == "y" || "$is_laptop" == "yes" ]]; then
+    echo "[DRY RUN] Would install laptop packages: tlp acpi acpi_call"
+    echo "[DRY RUN] Would enable: tlp.service"
+  else
+    echo "[DRY RUN] Would install PC packages: cpupower"
+  fi
+fi
+
 print_info "Preparing to stow dotfiles..."
 
-# Backup .config if requested
 if [[ "$DRY_RUN" == "false" ]]; then
   read -p "Do you want to backup your current .config directory? (y/n, default: y): " backup_choice
   backup_choice=${backup_choice:-y}
@@ -126,7 +153,6 @@ else
   echo "[DRY RUN] Would ask about backing up .config directory"
 fi
 
-# Improved conflict-safe stow function
 stow_safe() {
   local modules=("$@")
   local target_dir="$HOME"
@@ -149,7 +175,6 @@ stow_safe() {
 
     print_info "Stowing module: $module"
 
-    # More robust conflict detection
     conflicts=$(stow -n -v "$module" 2>&1 | grep -E "(existing target|would conflict)" | grep -o "$target_dir[^ ]*" || true)
 
     if [[ -n "$conflicts" ]]; then
@@ -158,9 +183,7 @@ stow_safe() {
       read -p "Backup & remove conflicting files? (y/n, default: y): " answer
       answer=${answer:-y}
       if [[ "$answer" == "y" ]]; then
-        # Create backup directory if it doesn't exist
         mkdir -p "$HOME/.config_backup_conflicts"
-
         while IFS= read -r file; do
           if [[ -e "$file" ]]; then
             backup_path="$HOME/.config_backup_conflicts${file#$HOME}"
@@ -184,7 +207,6 @@ stow_safe() {
   done
 }
 
-# Menu for selecting dotfiles modules to stow
 declare -A module_map=(
   [1]="waybar"
   [2]="swaync"
@@ -202,9 +224,8 @@ declare -A module_map=(
   [14]="hypr"
   [15]="git"
   [16]="zshrc"
-  [17]="wallpapers"
-  [18]="mpv"
-  [19]="startpage"
+  [17]="mpv"
+  [18]="startpage"
   [0]="ALL"
 )
 
@@ -269,13 +290,10 @@ enable_service() {
   fi
 }
 
-# Enable system services
 enable_service "sddm.service"
 enable_service "NetworkManager.service"
 enable_service "bluetooth.service"
 enable_service "power-profiles-daemon.service"
-
-# Enable user services
 enable_service "pipewire.service" "true"
 enable_service "pipewire-pulse.service" "true"
 

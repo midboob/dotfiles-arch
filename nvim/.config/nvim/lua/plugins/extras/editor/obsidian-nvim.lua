@@ -79,16 +79,11 @@ return {
 
     ---@return table
     note_frontmatter_func = function(note)
-      -- Add the title of the note as an alias.
-      if note.title then
-        note:add_alias(note.title)
-      end
-
       local out = {
         id = note.id,
         aliases = note.aliases,
         tags = note.tags,
-        links = note.metadata and note.metadata.links or {}, -- Preserve existing links
+        links = note.metadata and note.metadata.links or {},
       }
 
       -- `note.metadata` contains any manually added fields in the frontmatter.
@@ -129,23 +124,14 @@ return {
 
     attachments = {
       img_folder = "999 Images/",
-      -- A function that determines default name or prefix when pasting images via `:Obsidian paste_img`.
-      ---@return string
       img_name_func = function()
-        -- Prefix image names with timestamp.
         return string.format("Pasted image %s", os.date("%Y%m%d%H%M%S"))
       end,
-
-      -- A function that determines the text to insert in the note when pasting an image.
-      -- It takes two arguments, the `obsidian.Client` and an `obsidian.Path` to the image file.
-      -- This is the default implementation.
-      ---@param client obsidian.Client
-      ---@param path obsidian.Path the absolute path to the image file
-      ---@return string
       img_text_func = function(client, path)
-        path = client:vault_relative_path(path) or path
-        return string.format("![%s](%s)", path.name, path)
+        -- Use the base name and make it a wikilink
+        return string.format("![[%s]]", path.name)
       end,
+      confirm_img_paste = false,
     },
   },
 }

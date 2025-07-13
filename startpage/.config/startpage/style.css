@@ -94,9 +94,10 @@ a:hover {
   color: var(--color-link-hover);
 }
 
-.blinking {
-  animation: opacity 1s ease-in-out infinite;
-  opacity: 1;
+
+.gif img {
+    width: 350px;  /* or a percentage like 80% */
+    height: auto;  /* maintains aspect ratio */
 }
 
 @keyframes opacity {
