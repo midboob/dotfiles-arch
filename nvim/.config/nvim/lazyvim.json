@@ -5,6 +5,7 @@
     "lazyvim.plugins.extras.ui.smear-cursor",
     "plugins.extras.coding.blink-extended",
     "plugins.extras.coding.luasnip-extended",
+    "plugins.extras.editor.bullets",
     "plugins.extras.editor.markdown-preview",
     "plugins.extras.editor.obsidian-nvim",
     "plugins.extras.editor.render-markdown",

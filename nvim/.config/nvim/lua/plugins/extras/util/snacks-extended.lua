@@ -91,8 +91,8 @@ return {
       end,
       doc = {
         enable = true,
-        inline = false,
-        float = true,
+        inline = true,
+        float = false,
         max_width = 80,
         max_height = 40,
       },

@@ -108,34 +108,55 @@ else
   echo "[DRY RUN] Would install: ${selected_packages[*]}"
 fi
 
+print_info "Checking default shell..."
+
+if [[ "$DRY_RUN" == "false" ]]; then
+  if [[ "$SHELL" != *zsh ]]; then
+    if command -v zsh &>/dev/null; then
+      print_info "Changing default shell to zsh for user $USER..."
+      chsh -s "$(command -v zsh)" "$USER"
+      print_success "Shell changed to zsh. You may need to logout and log back in."
+    else
+      print_error "zsh is not installed!"
+    fi
+  else
+    print_success "Default shell is already zsh."
+  fi
+else
+  echo "[DRY RUN] Would check and change default shell to zsh"
+fi
+
 # Additional prompt for laptop vs PC
 read -p "Are you installing on a laptop? (y/n): " is_laptop
 is_laptop=${is_laptop,,}
 
+# Define package lists before conditional logic
+laptop_packages=(
+  hypridle
+  hyprlock
+)
+
+pc_packages=(
+  openrgb
+  ntfs-3g
+  upscayl-bin
+)
+
 if [[ "$DRY_RUN" == "false" ]]; then
   if [[ "$is_laptop" == "y" || "$is_laptop" == "yes" ]]; then
     print_info "Installing laptop-specific packages..."
-    laptop_packages=(
-      hypridle
-      hyprlock
-    )
     yay -S --needed "${laptop_packages[@]}" && print_success "Laptop packages installed!"
     # enable_service "tlp.service"
   else
     print_info "Installing PC-specific packages..."
-    pc_packages=(
-      openrgb
-      ntfs-3g
-      upscayl-bin
-    )
     yay -S --needed "${pc_packages[@]}" && print_success "PC packages installed!"
   fi
 else
   if [[ "$is_laptop" == "y" || "$is_laptop" == "yes" ]]; then
-    echo "[DRY RUN] Would install laptop packages: tlp acpi acpi_call"
-    echo "[DRY RUN] Would enable: tlp.service"
+    echo "[DRY RUN] Would install laptop packages: ${laptop_packages[*]}"
+    # echo "[DRY RUN] Would enable: tlp.service"
   else
-    echo "[DRY RUN] Would install PC packages: cpupower"
+    echo "[DRY RUN] Would install PC packages: ${pc_packages[*]}"
   fi
 fi
 

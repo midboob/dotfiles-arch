@@ -81,8 +81,10 @@ return {
     note_frontmatter_func = function(note)
       local out = {
         id = note.id,
-        aliases = note.aliases,
+        -- alias = note.metadata and note.metadata.alias or {},
+        aliases = note.aliases or {},
         tags = note.tags,
+        references = note.metadata and note.metadata.references or {},
         links = note.metadata and note.metadata.links or {},
       }
 
@@ -124,14 +126,9 @@ return {
 
     attachments = {
       img_folder = "999 Images/",
-      img_name_func = function()
-        return string.format("Pasted image %s", os.date("%Y%m%d%H%M%S"))
-      end,
       img_text_func = function(client, path)
-        -- Use the base name and make it a wikilink
         return string.format("![[%s]]", path.name)
       end,
-      confirm_img_paste = false,
     },
   },
 }
