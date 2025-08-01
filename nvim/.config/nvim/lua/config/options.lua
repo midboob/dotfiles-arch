@@ -62,3 +62,6 @@ o.linebreak = true
 
 -- Set conceallevel
 o.conceallevel = 2
+
+-- Disable swap files
+o.swapfile = false

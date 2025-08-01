@@ -17,8 +17,6 @@ alias grep="grep --color=always"
 
 # application aliases
 alias v=nvim
-alias vim=nvim
-alias za="zathura"
 alias code="vscodium"
 alias ytdl="yt-dlp --no-mtime"
 

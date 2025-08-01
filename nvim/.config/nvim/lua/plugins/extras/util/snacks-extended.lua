@@ -4,6 +4,18 @@ return {
     dashboard = {
       enabled = true,
       width = 18,
+      preset = {
+        header = [[
+                                                                               
+                  ████ ██████           █████      ██                    
+                 ███████████             █████                            
+                 █████████ ███████████████████ ███   ███████████  
+                █████████  ███    █████████████ █████ ██████████████  
+               █████████ ██████████ █████████ █████ █████ ████ █████  
+             ███████████ ███    ███ █████████ █████ █████ ████ █████ 
+            ██████  █████████████████████ ████ █████ █████ ████ ██████
+        ]],
+      },
       sections = {
         -- stylua: ignore start
         { hidden = true, icon = " ", key = "o", desc = "[O]bsidian",   action = ":lua Snacks.dashboard.pick('files', { cwd = '/mnt/Storage/Documents/notes/' })" },
@@ -18,8 +30,6 @@ return {
           text = {
             { "Neovim :: Welcome back pɹɐʍpǝ", hl = "Title" },
           },
-          action = ":lua Snacks.dashboard.pick('files')",
-          key = "f",
         },
 
         -- Keys

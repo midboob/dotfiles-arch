@@ -2,12 +2,9 @@ local prefix = "<leader>o"
 
 return {
   "obsidian-nvim/obsidian.nvim",
-  version = "*", -- recommended, use latest release instead of latest commit
+  version = "*",
   lazy = true,
-  ft = { "markdown" },
-  dependencies = {
-    "nvim-lua/plenary.nvim",
-  },
+  ft = "markdown",
 
   keys = {
     { prefix, "<Nop>", desc = "obsidian" },
@@ -33,7 +30,7 @@ return {
     workspaces = {
       -- {
       --   name = "notes",
-      --   path = "~/Documents/notes/",
+      --   path = "~/vaults/personal",
       -- },
       {
         name = "notes",
@@ -41,35 +38,23 @@ return {
       },
     },
 
-    mappings = {
-      ["gf"] = {
-        action = function()
-          return require("obsidian").util.gf_passthrough()
-        end,
-        opts = { noremap = false, expr = true, buffer = true },
-      },
-      ["<M-c>"] = {
-        action = function()
-          return require("obsidian").util.toggle_checkbox()
-        end,
-        opts = { buffer = true },
-      },
-      ["<cr>"] = {
-        action = function()
-          return require("obsidian").util.smart_action()
-        end,
-        opts = { buffer = true, expr = true },
-      },
+    callbacks = {
+      enter_note = function(_, note)
+        vim.keymap.set("n", "<leader>ch", "<cmd>Obsidian toggle_checkbox<cr>", {
+          buffer = note.bufnr,
+          desc = "Toggle checkbox",
+        })
+      end,
     },
+
+    notes_subdir = "000 Index",
+    new_notes_location = "notes_subdir",
 
     completion = {
       nvim_cmp = false,
       blink = true,
       min_chars = 2,
     },
-
-    notes_subdir = "000 Index",
-    new_notes_location = "notes_subdir",
 
     ui = {
       enable = false,
@@ -130,5 +115,15 @@ return {
         return string.format("![[%s]]", path.name)
       end,
     },
+
+    footer = {
+      enabled = false,
+    },
+
+    checkbox = {
+      order = { " ", "x", "!", ">", "~" },
+    },
+
+    legacy_commands = false,
   },
 }

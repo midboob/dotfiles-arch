@@ -38,6 +38,9 @@ swww img "$WALLPAPER" \
   --transition-fps 60 &&
   notify-send "Wallpaper Changed" -i "$WALLPAPER" --app-name=swww
 
+# matugen or pywal/hellway
 matugen image "$WALLPAPER"
+# pywal -i "$WALLPAPER"
+# hellwal -i "$WALLPAPER"
 
 exit 0

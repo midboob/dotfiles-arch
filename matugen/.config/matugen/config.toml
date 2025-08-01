@@ -37,15 +37,15 @@ output_path = '~/.config/zathura/zathurarc'
 input_path = '~/.config/matugen/templates/matugen-yazi.toml'
 output_path = '~/.config/yazi/theme.toml'
 
-# GTk3
-[templates.gtk3]
-input_path = '~/.config/matugen/templates/matugen-gtk.css'
-output_path = '~/.config/gtk-3.0/gtk.css'
-
-# GTk4
-[templates.gtk4]
-input_path = '~/.config/matugen/templates/matugen-gtk.css'
-output_path = '~/.config/gtk-4.0/gtk.css'
+# # GTk3
+# [templates.gtk3]
+# input_path = '~/.config/matugen/templates/matugen-gtk.css'
+# output_path = '~/.config/gtk-3.0/gtk.css'
+#
+# # GTk4
+# [templates.gtk4]
+# input_path = '~/.config/matugen/templates/matugen-gtk.css'
+# output_path = '~/.config/gtk-4.0/gtk.css'
 
 # Qt5
 [templates.qt5]
