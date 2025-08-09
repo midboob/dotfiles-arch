@@ -18,9 +18,13 @@ return {
       },
       sections = {
         -- stylua: ignore start
-        { hidden = true, icon = " ", key = "o", desc = "[O]bsidian",   action = ":lua Snacks.dashboard.pick('files', { cwd = '/mnt/Storage/Documents/notes/' })" },
-        { hidden = true, icon = "󰒲 ", key = "l", desc = "[L]azy", action = ":Lazy" },
-        { hidden = true, icon = " ", key = "q", desc = "Quit", action = ":qa" },
+        { hidden = true, key = "o", action = ":lua Snacks.dashboard.pick('files', { cwd = '/mnt/Storage/Documents/notes/' })" },
+        { hidden = true, key = "l", action = ":Lazy" },
+        { hidden = true, key = "q", action = ":qa" },
+        { hidden = true, key = "d", action = ":lua Snacks.dashboard.pick('files', { cwd = '~/.dotfiles', hidden = true })", },
+        { hidden = true, key = "f", action = ":lua Snacks.dashboard.pick('files')" },
+        { hidden = true, key = "n", action = ":ene | startinsert" },
+        { hidden = true, key = "c", action = ":lua Snacks.dashboard.pick('files', {cwd = vim.fn.stdpath('config')})" },
         -- stylua: ignore end
 
         -- Header
@@ -39,40 +43,32 @@ return {
             { "  [F]ind File", width = 19, hl = "Function" },
             { "  [O]bsidian", hl = "Function" },
           },
-          action = ":lua Snacks.dashboard.pick('files')",
-          key = "f",
         },
         {
           padding = 1,
           text = {
             { " ", width = 13 },
-            { "  [N]ew File", hl = "Function" },
+            { "  [N]ew File", hl = "Function" },
             { " ", width = 6 },
             { "󰒲  [L]azy", hl = "Function" },
             { " ", width = 17 },
           },
-          action = ":ene | startinsert",
-          key = "n",
         },
         {
           padding = 2,
           text = {
-            { " ", width = 9 },
+            { " ", width = 8 },
             { "  [C]onfig", hl = "Function" },
             { " ", width = 8 },
-            { "  [Q]uit", hl = "Function" },
-            { " ", width = 14 },
+            { "  [D]otfiles", hl = "Function" },
+            { " ", width = 8 },
           },
-          action = ":lua Snacks.dashboard.pick('files', {cwd = vim.fn.stdpath('config')})",
-          key = "c",
         },
 
         --  Startup
         { section = "startup", padding = 1 },
         { section = "terminal", cmd = "printf ' '", height = 15 },
       },
-
-      formats = { key = { "" } },
     },
 
     image = {

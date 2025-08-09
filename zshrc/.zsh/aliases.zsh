@@ -47,7 +47,7 @@ alias gb="git branch"
 alias gf="git fetch"
 
 # hyprland config
-alias hyprconf="~/dotfiles/hypr/.config/hypr/conf/"
+alias hyprconf="~/.config/hypr/conf/"
 
 # notes config
 alias notes="/mnt/Storage/Documents/notes/"
@@ -56,7 +56,13 @@ alias notes="/mnt/Storage/Documents/notes/"
 alias "spicetify update"="spicetify restore backup apply"
 
 # dotfiles alias
-alias dotfiles="~/dotfiles/"
+alias dots="~/.dotfiles/"
 
 # ani-cli alias
 alias ani="ani-cli"
+
+# Storage
+alias storage="/mnt/Storage/"
+
+# cybedropdl
+alias cyberdl="/mnt/Storage/Documents/Cyberdrop\ DL/"

@@ -125,5 +125,8 @@ return {
     },
 
     legacy_commands = false,
+
+    sort_by = "modified",
+    sort_reversed = true,
   },
 }
